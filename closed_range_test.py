@@ -21,6 +21,7 @@ def test_convert_able_to_string():
 def test_throw_except_initial():
     try:
         ClosedRange(8, 3)
-        fail("not throwing")
     except:
-        pass
+        return
+
+    fail("not throwing")
