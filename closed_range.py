@@ -3,6 +3,9 @@
 
 class ClosedRange:
     def __init__(self, lower_endpoint, upper_endpoint):
+        if lower_endpoint > upper_endpoint:
+            raise
+
         self.lower_endpoint = lower_endpoint
         self.upper_endpoint = upper_endpoint
 
