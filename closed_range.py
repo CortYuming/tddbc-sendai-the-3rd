@@ -35,7 +35,7 @@ class ClosedRange:
         return number in [n for n in range(self.lower_endpoint, last_point) if n > 0]
 
 
-    def is_conected_to(self, other):
+    def is_connected_to(self, other):
         closed_range1 = range(self.lower_endpoint, self.upper_endpoint + 1)
         closed_range2 = range(other.get_lower_endpoint(), other.get_upper_endpoint() + 1)
 

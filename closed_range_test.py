@@ -9,7 +9,7 @@ from pytest import fail, mark
 from closed_range import ClosedRange
 
 
-@mark.parametrize("lower_endpoint, upper_endpoint",[
+@mark.parametrize("lower_endpoint, upper_endpoint", [
     (3, 8),
     (-5, 9),
     (-5, -1),
@@ -46,12 +46,13 @@ def test_equals_other_closed_range():
     assert closed_range1 == ClosedRange(3, 8)
     assert closed_range1 != ClosedRange(4, 5)
 
+
 @mark.parametrize("low1, up1, low2, up2, actual", [
-    (3,8,1,6, True),
-    (3,8,8,15, True),
-    (3,8,9,12, False),
+    (3, 8, 1, 6, True),
+    (3, 8, 8, 15, True),
+    (3, 8, 9, 12, False),
 ])
-def test_conected_to_other_closed_range(low1, up1, low2, up2, actual):
-    clased_range1 = ClosedRange(low1, up1)
-    clased_range2 = ClosedRange(low2, up2)
-    assert clased_range1.is_conected_to(clased_range2) is actual
+def test_connected_to_other_closed_range(low1, up1, low2, up2, actual):
+    closed_range1 = ClosedRange(low1, up1)
+    closed_range2 = ClosedRange(low2, up2)
+    assert closed_range1.is_connected_to(closed_range2) is actual
