@@ -18,3 +18,6 @@ class ClosedRange:
     def toString(self):
         return "[{lower},{upper}]".format(lower=self.lower_endpoint,
                                           upper=self.upper_endpoint)
+
+    def is_contains(self, number):
+        return number in [num for num in range(self.lower_endpoint, self.upper_endpoint + 1) if num > 0]

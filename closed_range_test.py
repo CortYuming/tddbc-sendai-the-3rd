@@ -25,3 +25,9 @@ def test_throw_except_initial():
         return
 
     fail("not throwing")
+
+def test_contains_between_lower_to_upper():
+    range_interval = ClosedRange(3,8)
+    assert range_interval.is_contains(5) == True
+    assert range_interval.is_contains(-1) == False
+    
