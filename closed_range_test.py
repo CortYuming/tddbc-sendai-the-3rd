@@ -40,3 +40,8 @@ def test_contains_between_lower_to_upper():
     assert range_interval.is_contains(5) is True
     assert range_interval.is_contains(-1) is False
 
+
+def test_equals_other_closed_range():
+    closed_range1 = ClosedRange(3, 8)
+    assert closed_range1 == ClosedRange(3, 8)
+    assert closed_range1 != ClosedRange(4, 5)
