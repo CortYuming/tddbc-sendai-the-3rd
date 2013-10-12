@@ -34,10 +34,6 @@ class ClosedRange:
         last_point = self.upper_endpoint + 1
         return number in [n for n in range(self.lower_endpoint, last_point) if n > 0]
 
-        # for num in range(self.lower_endpoint, last_point):
-        #     if num == number:
-        #         return True
-        # return False
 
     def is_conected_to(self, other):
         closed_range1 = range(self.lower_endpoint, self.upper_endpoint + 1)
