@@ -38,3 +38,12 @@ class ClosedRange:
         #     if num == number:
         #         return True
         # return False
+
+    def is_conected_to(self, other):
+        closed_range1 = range(self.lower_endpoint, self.upper_endpoint + 1)
+        closed_range2 = range(other.get_lower_endpoint(), other.get_upper_endpoint() + 1)
+
+        for num in closed_range1:
+            if num in closed_range2:
+                return True
+        return False
