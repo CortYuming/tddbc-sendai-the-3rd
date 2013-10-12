@@ -23,7 +23,7 @@ def test_convert_able_to_string():
 def test_throw_except_initial():
     try:
         ClosedRange(8, 3)
-    except:
+    except RuntimeError:
         return
 
     fail("not throwing")
