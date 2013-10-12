@@ -5,14 +5,20 @@
 # 閉区間から下端点と上端点を取得しよう
 # 閉区間から文字列表記を取得しよう
 
-from pytest import fail
+from pytest import fail, mark
 from closed_range import ClosedRange
 
 
-def test_create_range():
-    range_interval = ClosedRange(3, 8)
-    assert range_interval.get_lower_endpoint() == 3
-    assert range_interval.get_upper_endpoint() == 8
+@mark.parametrize("lower_endpoint, upper_endpoint",[
+    (3, 8),
+    (-5, 9),
+    (-5, -1),
+    (5, 5),
+])
+def test_create_range(lower_endpoint, upper_endpoint):
+    range_interval = ClosedRange(lower_endpoint, upper_endpoint)
+    assert range_interval.get_lower_endpoint() == lower_endpoint
+    assert range_interval.get_upper_endpoint() == upper_endpoint
 
 
 def test_convert_able_to_string():
