@@ -11,3 +11,7 @@ class ClosedRange:
 
     def get_upper_endpoint(self):
         return self.upper_endpoint
+
+    def toString(self):
+        return "[{lower},{upper}]".format(lower=self.lower_endpoint,
+                                          upper=self.upper_endpoint)
