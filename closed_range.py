@@ -20,4 +20,10 @@ class ClosedRange:
                                           upper=self.upper_endpoint)
 
     def is_contains(self, number):
-        return number in [num for num in range(self.lower_endpoint, self.upper_endpoint + 1) if num > 0]
+        last_point = self.upper_endpoint + 1
+        return number in [n for n in range(self.lower_endpoint, last_point) if n > 0]
+
+        # for num in range(self.lower_endpoint, last_point):
+        #     if num == number:
+        #         return True
+        # return False
