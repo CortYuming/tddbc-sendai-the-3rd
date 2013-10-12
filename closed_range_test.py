@@ -7,6 +7,9 @@
 
 from closed_range import ClosedRange
 
+
+
 def test_create_range():
     range_interval = ClosedRange(3, 8)
     assert range_interval.get_lower_endpoint() == 3
+    assert range_interval.get_upper_endpoint() == 8

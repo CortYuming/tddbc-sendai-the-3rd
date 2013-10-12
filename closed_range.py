@@ -8,3 +8,6 @@ class ClosedRange:
 
     def get_lower_endpoint(self):
         return self.lower_endpoint
+
+    def get_upper_endpoint(self):
+        return self.upper_endpoint
