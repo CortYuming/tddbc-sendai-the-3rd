@@ -47,12 +47,12 @@ def test_equals_other_closed_range():
     assert closed_range1 != ClosedRange(4, 5)
 
 
-@mark.parametrize("low1, up1, low2, up2, actual", [
-    (3, 8, 1, 6, True),
-    (3, 8, 8, 15, True),
-    (3, 8, 9, 12, False),
+@mark.parametrize("range_a, range_b, actual", [
+    ([3, 8], [1, 6], True),
+    ([3, 8], [8, 15], True),
+    ([3, 8], [9, 12], False),
 ])
-def test_connected_to_other_closed_range(low1, up1, low2, up2, actual):
-    closed_range1 = ClosedRange(low1, up1)
-    closed_range2 = ClosedRange(low2, up2)
+def test_connected_to_other_closed_range(range_a, range_b, actual):
+    closed_range1 = ClosedRange(*range_a)
+    closed_range2 = ClosedRange(*range_b)
     assert closed_range1.is_connected_to(closed_range2) is actual
