@@ -34,11 +34,15 @@ class ClosedRange:
         last_point = self.upper_endpoint + 1
         return number in range(self.lower_endpoint, last_point)
 
-    def is_connected_to(self, other):
-        closed_range1 = range(self.lower_endpoint, self.upper_endpoint + 1)
-        closed_range2 = range(other.get_lower_endpoint(), other.get_upper_endpoint() + 1)
+    def is_connected_to(self, other_crosed_range):
+        start_last_point = self.upper_endpoint + 1
+        start_closed_range = range(self.lower_endpoint,
+                                   start_last_point)
 
-        for num in closed_range1:
-            if num in closed_range2:
-                return True
+        stop_last_point = other_crosed_range.get_upper_endpoint() + 1
+        stop_closed_range = range(other_crosed_range.get_lower_endpoint(),
+                                  stop_last_point)
+
+        if len(set(start_closed_range).intersection(stop_closed_range)):
+            return True
         return False
