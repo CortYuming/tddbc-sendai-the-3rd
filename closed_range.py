@@ -32,8 +32,7 @@ class ClosedRange:
 
     def is_contains(self, number):
         last_point = self.upper_endpoint + 1
-        return number in [n for n in range(self.lower_endpoint, last_point) if n > 0]
-
+        return number in range(self.lower_endpoint, last_point)
 
     def is_connected_to(self, other):
         closed_range1 = range(self.lower_endpoint, self.upper_endpoint + 1)
